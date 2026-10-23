@@ -45,6 +45,7 @@ class ShopApiTest extends TestCase
     public function test_private_resources_require_authentication(): void
     {
         foreach (['users', 'products', 'sales'] as $resource) {
+            $this->get('/api/private/'.$resource)->assertUnauthorized()->assertJsonPath('message', 'Unauthenticated.');
             $this->getJson('/api/private/'.$resource)->assertUnauthorized();
             $this->postJson('/api/private/'.$resource, [])->assertUnauthorized();
             $this->putJson('/api/private/'.$resource.'/1', [])->assertUnauthorized();

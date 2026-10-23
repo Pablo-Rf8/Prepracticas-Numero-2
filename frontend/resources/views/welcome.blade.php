@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Proyecto 2</title>
-    <link rel="stylesheet" href="{{ route('frontend.styles') }}">
-    <script src="{{ route('frontend.script') }}" defer></script>
+    <link rel="stylesheet" href="{{ route('frontend.styles', [], false) }}">
+    <script src="{{ route('frontend.script', [], false) }}" defer></script>
 </head>
 <body>
 <main>
