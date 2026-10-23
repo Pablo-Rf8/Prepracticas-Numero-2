@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "API: iniciar servidor",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/scripts/dev.ps1"
+      ],
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "API: pruebas Postman",
+      "type": "shell",
+      "command": "postman",
+      "args": [
+        "collection",
+        "run",
+        "${workspaceFolder}/frontend/postman/Proyecto2.postman_collection.json",
+        "-e",
+        "${workspaceFolder}/frontend/postman/Local.local.json",
+        "--no-report-events"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always"
+      }
+    }
+  ]
+}

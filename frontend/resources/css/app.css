@@ -1,0 +1,57 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f5f5f5; color: #252525; font: 15px/1.5 Arial, sans-serif; }
+main { max-width: 1000px; margin: 40px auto; padding: 28px; background: white; border: 1px solid #ddd; border-radius: 5px; }
+header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+h1 { margin: 0; font-size: 25px; }
+h2 { margin: 0; font-size: 19px; }
+p { margin: 6px 0; }
+.muted { color: #666; }
+nav { display: flex; gap: 8px; margin: 24px 0; }
+button, input { font: inherit; border: 1px solid #bbb; border-radius: 3px; padding: 7px 12px; }
+button { background: #fafafa; color: #252525; cursor: pointer; }
+button:hover { background: #eee; }
+button[aria-pressed="true"], button.primary { background: #315c91; border-color: #315c91; color: white; }
+button:disabled { opacity: .5; cursor: default; }
+:focus-visible { outline: 2px solid #315c91; outline-offset: 3px; }
+details { margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid #ddd; }
+summary { width: fit-content; cursor: pointer; color: #315c91; }
+form { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
+label { display: block; margin-bottom: 4px; }
+input { width: 240px; max-width: 100%; background: white; }
+.password { display: flex; gap: 5px; }
+.password input { width: 190px; min-width: 0; }
+#session-name { margin-bottom: 8px; }
+.section-heading, footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+#message { margin: 14px 0; color: #555; }
+#message.error { color: #a12626; }
+.table-container { overflow-x: auto; margin: 14px 0 20px; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+caption { text-align: left; padding: 20px 0; color: #666; }
+th, td { padding: 10px 12px; border-bottom: 1px solid #e4e4e4; vertical-align: top; }
+th { background: #f6f6f6; font-weight: 600; }
+td { overflow-wrap: break-word; }
+td.compact { white-space: nowrap; width: 1%; }
+td.sale-products { white-space: pre-line; min-width: 230px; line-height: 1.8; }
+table[data-section="sales"] { min-width: 760px; }
+td:first-child { white-space: nowrap; }
+footer p { color: #666; }
+.pagination { display: flex; gap: 6px; }
+[hidden] { display: none !important; }
+@media (max-width: 640px) {
+    main { margin: 16px; padding: 18px; }
+    header, footer { align-items: flex-start; flex-direction: column; }
+    header h1 { font-size: 22px; }
+    form, form > div { width: 100%; }
+    input, .password, .password input { width: 100%; }
+    .password button { flex-shrink: 0; }
+    th, td { padding: 8px; }
+    table[data-section="products"] { min-width: 560px; }
+}
+@media (max-width: 880px) {
+    table[data-section="sales"] { min-width: 0; }
+    table[data-section="sales"] thead { display: none; }
+    table[data-section="sales"] tbody { display: block; }
+    table[data-section="sales"] tr { display: block; border: 1px solid #ddd; margin-bottom: 12px; padding: 8px; }
+    table[data-section="sales"] td { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 8px; width: auto; min-width: 0; border: 0; padding: 4px; }
+    table[data-section="sales"] td::before { content: attr(data-label); font-weight: 600; white-space: nowrap; }
+}

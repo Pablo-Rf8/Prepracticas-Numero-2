@@ -1,0 +1,9 @@
+/.tools/
+/backend/vendor/
+/backend/.env
+/backend/.phpunit.result.cache
+/backend/storage/logs/*.log
+/bd/*.sqlite*
+/frontend/postman/*.local.json
+/frontend/postman/reports/
+**/node_modules/
